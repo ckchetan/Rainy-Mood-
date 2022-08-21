@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            Cloud effect
+        </title>
+    </head>
+    <body>
+        <div class="container">
+
+            <div class="round">
+                <div class="rain">
+
+               <span style="--i:11"></span>
+                <span style="--i:12"></span>
+                 <span style="--i:14"></span>
+                  <span style="--i:13"></span>
+                   <span style="--i:11"></span>
+                    <span style="--i:17"></span>
+                     <span style="--i:19"></span>
+                       <span style="--i:20"></span>
+                <span style="--i:21"></span>
+                 <span style="--i:14"></span>
+                  <span style="--i:12"></span>
+                   <span style="--i:12"></span>
+                    <span style="--i:16"></span>
+                     <span style="--i:18"></span>
+                      <span style="--i:11"></span>
+                <span style="--i:12"></span>
+                 <span style="--i:14"></span>
+                  <span style="--i:13"></span>
+                   <span style="--i:11"></span>
+                    <span style="--i:17"></span>
+                     <span style="--i:19"></span>
+                       <span style="--i:20"></span>
+                <span style="--i:21"></span>
+                 <span style="--i:14"></span>
+                  <span style="--i:12"></span>
+                   <span style="--i:12"></span>
+                    <span style="--i:16"></span>
+                     <span style="--i:18"></span>
+                </div>
+            </div>
+            <img src="images.jpg" style="width: 200px; margin-top: 150px; margin-left: 30px;">
+        </div>
+        <style>
+            *{
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+                
+            }
+            body{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                min-height: 100vh;
+                background-color: black;
+            }
+            .container{
+                position:relative;
+                height: 400px;
+               
+             
+            }
+            .round{
+                position: relative;
+                width: 300px;
+                top: 20%;
+                height: 100px;
+                background: white;
+                border-radius:50px;
+            }
+            .round::before
+            {
+                content: '';
+                width: 110px;
+                top: -50%;
+                left: 10%;
+                height: 110px;
+                position: absolute;
+                background: white;
+                border-radius:50%;
+                box-shadow: 100px 0 0 30px #fff;
+
+            }
+            .rain{
+                position: relative;
+                display: flex;
+                z-index: 1;
+                padding: 0 20px;
+            }
+            .rain span{
+                position: relative;
+                bottom: 10px;
+                width: 10px;
+                height: 10px;
+                background: white;
+                margin: 0 2px;
+                border-radius: 50%;
+                animation: animate 5s linear infinite;
+                animation-duration: calc(15s /var(--i));
+                transform-origin: bottom;
+            }
+            @keyframes animate{
+                0%{
+                    transform: translateY(0) scale(1);
+                }
+                70%{
+                    transform: translateY(300px) scale(1);
+                }
+                100%{
+                    transform: translateY(300px) scale(0);
+                }
+            }
+        </style>
+    </body>
+</html>
